@@ -1,0 +1,310 @@
+@use 'custom';
+
+$background-color: #a5c5a6;
+$marisa-bg:#EBEAE7;
+$text-color: #3e3e3e;
+$footer-text-color: #c2bebe;
+$link-color: #c2bebe;
+$link-hover-color: darken($link-color, 10%);
+$primary-font : Josefin Sans ;
+$secondary-font : Playfair Display ;
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $primary-font;
+  }
+  
+  $primary-color: #e6492d;
+  $background-image: url('../../assets/img/Portada-brownies.jpg'); // Replace with the path to your image
+  
+
+  .header {
+    background: linear-gradient(
+                rgba(0, 0, 0, 0.5), 
+                rgba(0, 0, 0, 0.5)
+              ), 
+              $background-image;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    max-height: 1080px;
+
+    .header-title{
+      width: 100%;
+      height: 85%;
+      max-height: 100%;
+      .title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+      }
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: 4rem;
+        font-family: $secondary-font;
+    }
+
+    p {
+        font-size: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .btn-primary {
+        background-color: $primary-color;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-size: 1.25rem;
+        margin-top: 1rem;
+    }
+
+    .navbar {
+        top:5%;
+        width: 100%;
+        height: 15%;
+        background: transparent !important;
+
+        .navbar-brand {
+            color: white;
+            font-weight: bold;
+            width: 350px;
+            height: 88px;
+            position: absolute;
+            left: 50%;
+            
+            transform: translateX(-50%);
+            a{
+              width: 100%;
+                height: 100%;
+              img{
+                width: 100%;
+                height: 100%;
+              }
+            }
+        }
+        .nav-item{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+            .nav-link {
+              color: white;
+              font-size: 12px;
+              display: flex;
+              align-items: center;
+
+              &:hover {
+                  color: $primary-color;
+              }
+            }
+        }
+        
+        
+        .navbar-toggler {
+          border: none;
+          background-color: transparent !important;
+
+          .navbar-toggler-icon {
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+          }
+      }
+        #navbarNav{
+          display: flex;
+          align-items: center;
+          img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50px;
+            background-color: white;
+          }
+        }
+    }
+}
+
+
+  
+
+  .marisa{
+    background-color: $marisa-bg;
+    padding: 10rem 2.5rem;
+        h2 {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+        }
+        
+        .img-fluid {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .productos {
+      padding: 10rem 2.5;
+  
+      .tipo-brownie {
+          margin: 0;
+            height: 100%;
+            width: 100%;
+            border: 1px solid red;
+              h1 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+              }
+              .btn{
+                width: 50px;  // Set button width to 55%
+                justify-content: center; // Center text horizontally
+                align-items: center;     // Center text vertically
+                display: flex;           // Ensure flex display for centering
+                font-size: 18px;
+                height: 50px;           // Maintain height if needed
+                cursor: pointer;
+              }
+      }
+  
+      h3 {
+          font-weight: bold;
+          margin-bottom: 1rem;
+      }
+  
+      p {
+          font-size: 1rem;
+          line-height: 1.5;
+          color: #333;
+      }
+  
+  
+      .btn-primary {
+          background-color: #f76545;
+          border-color: #f76545;
+          /* Layout Properties */
+          /* UI Properties */
+          border-radius: 8px;
+          opacity: 1;
+          width: 55%;  // Set button width to 55%
+          font-size: 18px;
+  
+          &:hover {
+              background-color: #e7543d;
+              border-color: #e7543d;
+          }
+      }
+  
+      .btn-secondary {
+          background-color: #C6BFBF;
+          border: none;
+          color: white;
+          /* UI Properties */
+          border-radius: 8px;
+          opacity: 1;
+          width: 55%;  // Center text horizontally    // Center text vertically         // Ensure flex display for centering
+          font-size: 18px;
+  
+          &:hover {
+              background-color: #bbb;
+              border-color: #bbb;
+          }
+      }
+  }
+  
+
+    .reviews {
+      padding: 10rem 2.5;
+      background-color: #f8f9fa;
+      .review {
+
+          border-radius: 10px;
+          padding: 20px;
+          margin-bottom: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          
+          .review__imagen {
+              width: 80px;
+              height: 80px;
+              background-color: #884848;
+              border-radius: 50%;
+              margin-bottom: 20px; /* Adjusted margin */
+          }
+          
+          .review__nombre {
+              font-size: 18px;
+              font-weight: bold;
+              text-align: center;
+          }
+  
+          .review__contenido {
+              text-align: center;
+              margin-bottom: 0;
+          }
+      }
+  }       /* Estilos personalizados */
+       
+       .probar-brownie {
+        background-color: #d1e7dd; 
+        .container {
+          padding: 10rem 0;
+            
+            
+            h2 {
+                font-family: 'Arial', sans-serif;
+                font-weight: bold;
+                text-align: start;
+                font-size: 35px;
+            }
+            
+            p {
+                font-family: 'Arial', sans-serif;
+                font-size: 1rem;
+                line-height: 1.5;
+                text-align: start;
+            }
+            
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+            
+            .row {
+                align-items: center;
+            }
+        }
+    }
+
+.footer {
+  background-color: white;
+  padding: 1rem 0;
+  color: $footer-text-color;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.875rem;
+  p {
+    margin: 0;
+    line-height: 1.5;
+    &:first-child {
+      margin-bottom: 0.5rem;
+    }
+  }
+  a {
+    color: $link-color;
+    text-decoration: none;
+  
+    &:hover {
+      color: $link-hover-color;
+      text-decoration: underline;
+    }
+  }
+
+}
