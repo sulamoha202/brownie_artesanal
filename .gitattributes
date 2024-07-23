@@ -1,0 +1,12 @@
+# Configuración general para finales de línea
+* text=auto
+
+# Forzar finales de línea LF para todos los archivos
+*.sh text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+
+# Forzar finales de línea CRLF para todos los archivos
+*.bat text eol=crlf
+*.cmd text eol=crlf
