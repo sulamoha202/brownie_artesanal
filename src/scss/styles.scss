@@ -192,7 +192,6 @@ body {
           color: #333;
       }
     }
-
         .image-cropper{
           overflow: hidden;
           .cropped-img {
@@ -223,8 +222,9 @@ body {
 
     }
   }
+
     .productos {
-      padding: 10rem 2.5;
+      padding: 10rem 0;
   
       .tipo-brownie {
           margin: 0;
@@ -254,10 +254,13 @@ body {
   
       h3 {
           font-weight: bold;
+          font-size: 2rem ;
           margin-bottom: 1rem;
       }
   
       p {
+          padding: 0 8rem;
+          margin:2rem 0;
           font-size: 1rem;
           line-height: 1.5;
           color: #333;
@@ -297,38 +300,46 @@ body {
       }
   }
          /* Estilos personalizados */     
-       .probar-brownie {
-        background-color: #d1e7dd; 
-        .container {
-          padding: 10rem 0;
+  .probar-brownie {
+  background-color: #d1e7dd; 
+  color: white;
+  font-weight: bold;
+
+
+  .container-fluid {
+    padding: 10rem 0;
+    .row{
+      margin: 0;
+      padding: 0;
+      h2 {
+          text-align: start;
+          font-size: 35px;
+          color:#26150A;
+      }
+      
+      p {
+       
+          font-size: 1rem;
+
+          line-height: 1.5;
+          text-align: start;
+      }
             
-            
-            h2 {
-                font-family: 'Arial', sans-serif;
-                font-weight: bold;
-                text-align: start;
-                font-size: 35px;
-            }
-            
-            p {
-                font-family: 'Arial', sans-serif;
-                font-size: 1rem;
-                line-height: 1.5;
-                text-align: start;
-            }
-            
-            .img-fluid {
-                max-width: 100%;
-                height: auto;
-                display: block;
-                margin: 0 auto;
-            }
-            
-            .row {
-                align-items: center;
-            }
+
+      .foto-brownie-completo{
+          .img-fluid {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
+      }
     }
+      
+      
+
+  }
+}
 
     
     .comentarios {
