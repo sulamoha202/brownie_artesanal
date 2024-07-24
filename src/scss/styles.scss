@@ -1,21 +1,31 @@
 @use 'variables';
 
-
-$background-color: #a5c5a6;
+//variables para control de colores de fondos
+$brawnie-completo-bg-color: #9ABEAA;
+$comentraios-bg-color:#EBEAE7;
 $marisa-bg:#EBEAE7;
-$text-color: #3e3e3e;
-$footer-text-color: #c2bebe;
 $link-color: #c2bebe;
 $link-hover-color: darken($link-color, 10%);
+$btn-primary-color: #E56A54;
+$btn-secondary-color:#C6BFBF;
+$background-image: url('../../assets/img/Portada-brownies.jpg'); // Replace with the path to your image
+
+//variables para control de colores de textos 
+ $primary-text-color:white;
+ $marisa-text-color:#A09797;
+ $header-text-color:#26150A;
+ $btn-txt-secondary-color:#E56A54;
+
+
+//variables para control de fuentes de textos
 $primary-font : Josefin Sans ;
 $secondary-font : Playfair Display ;
 
+//variables para control de tamaño de diseño
 $image-small-width:280px; 
 $image-small-hieght:342px; 
-
 $image-medium-width:570px; 
 $image-medium-hieght:320px;
-
 $image-large-width:720px; 
 $image-large-hieght:403px;
 
@@ -27,8 +37,6 @@ body {
     font-family: $primary-font;
   }
   
-  $primary-color: #e6492d;
-  $background-image: url('../../assets/img/Portada-brownies.jpg'); // Replace with the path to your image
   
 
   .header {
@@ -36,7 +44,7 @@ body {
     background-size: cover;
     background-position: center;
     height: 100vh;
-    color: white;
+    color: $primary-text-color;
     max-height: 1080px;
 
     @media(min-width: 375px) {
@@ -78,11 +86,14 @@ body {
     }
 
     .btn-primary {
-        background-color: $primary-color;
+        background-color: $btn-primary-color;
         border: none;
         padding: 0.75rem 1.5rem;
         font-size: 1.25rem;
         margin-top: 1rem;
+        &:hover{
+          background-color: $brawnie-completo-bg-color;
+        }
     }
 
     .navbar {
@@ -98,7 +109,7 @@ body {
         }
 
         .navbar-brand {
-          color: white;
+          color: $primary-text-color;
           font-weight: bold;
           width: 350px;
           height: 88px;
@@ -145,12 +156,12 @@ body {
 
         .nav-item{
             .nav-link {
-              color: white;
+              color: $primary-text-color;
               font-size: 12px;
               display: flex;
               align-items: center;
               &:hover {
-                  color: $primary-color;
+                  color: $marisa-text-color;
               }
             }
         }
@@ -176,50 +187,103 @@ body {
 
   .marisa{
     background-color: $marisa-bg;
-    padding: 10rem 2.5rem;
-    display: flex;
-    justify-content: center;
-    .descripcion{
-      max-width: 346px;
-      h2 {
-        font-weight: bold;
-        margin-bottom: 1rem;
-      }
-      
-      p {
-          font-size: 1rem;
-          line-height: 1.5;
-          color: #333;
-      }
-    }
-        .image-cropper{
-          overflow: hidden;
-          .cropped-img {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-
-            @media (min-width: 576px) {
-              width: $image-small-width;
-              height: $image-small-hieght;
-              padding-bottom: 0;
+    padding: 5rem 0;
+    .container-fluid{
+      display: flex;
+      flex-direction: grid;
+      align-items: center;
+      justify-content: center;
+      @media(max-width:768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .descripcion{
+          max-width: 80%;
+          padding: 0 2%;
+          
+          h2 {
+            font-weight: bold;
+            margin-bottom: 1rem;
           }
-      
-          @media (min-width: 768px) {
-              width: $image-medium-width;
-              height: $image-medium-hieght;
-              padding-bottom: 0;
-          }
-      
-          @media (min-width: 992px) {
-              width: $image-large-width;
-              height: $image-large-hieght;
-              padding-bottom: 0;
+          
+          p {
+              font-size: 1rem;
+              line-height: 1.5;
+              color: $marisa-text-color;
           }
         }
-
+        .portrait-image{
+          width: 80%;
+          height: 400px;
+          max-width: 719px;
+          background-image: url("../../assets/img/Marisa-Salmoral.jpg");
+          background-size: cover;
+          background-position: center;
+          border-radius: 15px;
+          box-shadow: 0 0 15px rgb(0,0,0,0.2);
+          margin: 3rem auto;
+        } 
+      } 
+      @media(max-width:1024px) and (min-width:769px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .descripcion{
+              max-width: 719px;
+              min-width: 719px;
+              
+              h2 {
+                font-weight: bold;
+                margin-bottom: 1rem;
+              }
+              
+              p {
+                  font-size: 1rem;
+                  line-height: 1.5;
+                  color: $marisa-text-color;
+              }
+            } 
+            .portrait-image{
+              width: 80%;
+              height: 400px;
+              max-width: 719px;
+              background-image: url("../../assets/img/Marisa-Salmoral.jpg");
+              background-size: cover;
+              background-position: center;
+              border-radius: 15px;
+              box-shadow: 0 0 15px rgb(0,0,0,0.2);
+              margin: 3rem auto;
+            }
+      }
+      @media(min-width:1025px){
+        .descripcion{
+            max-width: 346px;
+            margin-right:3rem;
+            h2 {
+              font-weight: bold;
+              margin-bottom: 1rem;
+            }
+            
+            p {
+                font-size: 1rem;
+                line-height: 1.5;
+                color: $marisa-text-color;
+            }
+          } 
+        .portrait-image{
+          width: 80%;
+          height: 400px;
+          max-width: 719px;
+          background-image: url("../../assets/img/Marisa-Salmoral.jpg");
+          background-size: cover;
+          background-position: center;
+          border-radius: 15px;
+          box-shadow: 0 0 15px rgb(0,0,0,0.2);
+        }
+      }
+      
     }
   }
 
@@ -256,6 +320,9 @@ body {
           font-weight: bold;
           font-size: 2rem ;
           margin-bottom: 1rem;
+          @media(max-width: 768px){
+            padding: 0 4rem;
+          }
       }
   
       p {
@@ -264,6 +331,9 @@ body {
           font-size: 1rem;
           line-height: 1.5;
           color: #333;
+          @media(max-width: 768px){
+            padding: 0 4rem;
+          }
       }
   
   
@@ -300,51 +370,111 @@ body {
       }
   }
          /* Estilos personalizados */     
-  .probar-brownie {
-  background-color: #d1e7dd; 
+  .opciones-brownie {
+  background-color: $brawnie-completo-bg-color; 
   color: white;
   font-weight: bold;
+  padding: 8rem 4rem;
 
 
   .container-fluid {
-    padding: 10rem 0;
-    .row{
-      margin: 0;
-      padding: 0;
+
       h2 {
-          text-align: start;
-          font-size: 35px;
-          color:#26150A;
-      }
-      
-      p {
-       
-          font-size: 1rem;
+        text-align: start;
+        font-size: 35px;
+        color:#26150A;
+    }
+    p {
+     
+        font-size: 1rem;
 
-          line-height: 1.5;
-          text-align: start;
+        line-height: 1.5;
+        text-align: start;
+    }
+    .foto-brownie-completo{
+        .img-fluid {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto;
       }
-            
-
-      .foto-brownie-completo{
-          .img-fluid {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
+    }
+    @media (max-width:768px){
+      .lg-device{
+        display: none;
+      } 
+      .sm-md-device{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        .probar-bronwie,.suscribirse-brownie{
+          padding: 0 3%;
         }
       }
     }
-      
-      
+    @media (max-width:1080px) and (min-width:768px){
+      .lg-device{
+        display: none;
+      } 
+      .sm-md-device{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .descripcion{
+          margin-left: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+          gap:5rem;
 
+          h1{
+            max-width: 176px;
+            min-width: 249px;
+          }
+          p{
+            max-width: 249px;
+            min-width: 249px;
+          }
+          .probar-bronwie,.suscribirse-brownie{
+            padding: 0 3%;
+          }
+        }
+
+      }
+    }
+    
+    @media(min-width:1080px){
+      .sm-md-device{
+        display: none ;
+      }
+      .lg-device{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: grid;
+        gap: 50px;
+        
+        .probar-bronwie{
+          width: 100%;
+        }
+        .suscribirse-brownie{
+          width: 100%;
+        }
+      } 
+    }
+    
+
+     
+    
   }
 }
 
     
     .comentarios {
       padding: 10rem 5rem;
-      background-color: #EBEAE7;
+      background-color: $comentraios-bg-color;
 
       @media(max-width:375px){
         padding: 10rem 0;
@@ -421,7 +551,7 @@ body {
 .footer {
   background-color: white;
   padding: 1rem 0;
-  color: $footer-text-color;
+  color: $marisa-text-color;
   font-family: 'Arial', sans-serif;
   font-size: 0.875rem;
   p {
